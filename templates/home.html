@@ -1,0 +1,63 @@
+<html>
+<body>
+    <div class="login">
+       <h1>Car Price Predictor</h1>
+   
+       <form action="{{ url_for('predict_datapoint')}}" method="post">
+        <h1>
+            <legend>Car price Prediction</legend>
+        </h1>
+        <div class="mb-3">
+            <label class="form-label">Car Width</label>
+            <input class="form-control" type="number" name="carwidth"
+                placeholder="Enter your Car Width" min='0' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Car Height</label>
+            <input class="form-control" type="number" name="carheight"
+                placeholder="Enter your Car Height" min='0' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Fuel Type</label>
+            <select class="form-control" name="fueltypes"
+                placeholder="Enter you Car fuel type" required>
+                <option class="placeholder" selected disabled value="">Select Car Fuel Type</option>
+                <option value="gas">
+                    gas
+                </option>
+                <option value="diesel">
+                    diesel
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Car Body</label>
+            <select class="form-control" name="carbody"
+                placeholder="Enter your Car Body Type" required>
+                <option class="placeholder" selected disabled value="">Select Car Body Type</option>
+                <option value="convertible">
+                    convertible
+                </option>
+                <option value="hatchback">
+                    hatchback
+                </option>
+                <option value="sedan">
+                    sedan
+                </option>
+                <option value="wagon">
+                    wagon
+                </option>
+                <option value="hardtop">
+                    hardtop
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Predict your Car Price" required />
+        </div>
+    </form>
+    <h2>
+       The Price is {{results}}
+    </h2>
+   <body>
+</html>
